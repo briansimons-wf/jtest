@@ -1,9 +1,11 @@
 pipeline {
-    agent { docker 'python:3.5.1' }
+    agent none
     stages {
-        stage('build') {
+        stage('Build') {
+            agent any
             steps {
-                sh 'python --version'
+                checkout scm
+                sh 'echo hello world' 
             }
         }
     }
